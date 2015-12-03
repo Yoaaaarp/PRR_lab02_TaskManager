@@ -1,6 +1,7 @@
 /**
  * Auteurs  : Marc Pellet et David Villa
  * Labo 	: 02 - PRR
+ * File 	: TaskManager.java
  * 
  * DESCRIPTION :
  * 
@@ -23,10 +24,7 @@
  * 
  * L'état de la classe est consultable grâce à la méthode isReady(). 
  * 
- * Afin d'avoir accès aux différentes tâches disponibles, l'utilisateur doit définir manuellement 
- * un port sur lequel écouter et envoyer des datagrammes (UDP).
- * 
- * De plus il doit connaitre et renseigner manuellement le port d'écoute du manager local au site
+ * Afin d'avoir accès aux différentes tâches disponibles, l'utilisateur doit connaitre et renseigner manuellement le port d'écoute du manager local au site
  * auquel l'utilisateur appartient.
  * 
  * Il est a noté que ce système n'est pas forcement le plus pratique, ni le plus intuitif pour un
@@ -113,11 +111,8 @@ public class TaskManager {
 	 * @throws SocketException - erreur lors de la création du socket.
 	 */
 	public void init() throws SocketException{
-		int port;
-		System.out.println("Veuillez renseigner le port sur lequel vous voulez travailler : ");
-		port = new Integer(Services.scan.nextLine());
-		socket = new DatagramSocket(port);
-		System.out.println("Vous avez choisi le port suivant : " + port);
+		// initialisation du socket
+		socket = new DatagramSocket();
 
 		System.out.println("Veuillez maintenant entrer le port d'écoute du manager du site : ");
 		managerPort = new Integer(Services.scan.nextLine());

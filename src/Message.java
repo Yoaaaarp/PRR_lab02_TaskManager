@@ -1,6 +1,7 @@
 /**
  * Auteurs  : Marc Pellet et David Villa
  * Labo 	: 02 - PRR
+ * File		: Message.java
  */
 public class Message {
 	public static final String MSG_GET_VALUE = "GET_VALUE";
